@@ -4,8 +4,22 @@ Phone screen prototyping practice project: інтерактивний прото
 
 ## Як відкрити прототип
 
+### Через GitHub (HTTP-посилання в браузері)
+
+Після увімкнення **GitHub Pages** прототип буде доступний за посиланням:
+
+**https://vitaliybilyak25.github.io/PhoneScreen_practice/**
+
+Як увімкнути GitHub Pages:
+1. Відкрийте репозиторій на GitHub → **Settings** → **Pages**.
+2. У блоці **Build and deployment** виберіть **Source**: *Deploy from a branch*.
+3. **Branch**: `main`, **Folder**: `/ (root)` → **Save**.
+4. За кілька хвилин сайт з’явиться за посиланням вище (перший раз може зайняти 1–2 хв).
+
+### Локально
+
 1. Відкрийте файл `index.html` у браузері (подвійний клік або перетягнути в вікно браузера).
-2. Або запустіть локальний сервер у корені проєкту, наприклад:
+2. Або запустіть локальний сервер у корені проєкту:
    - `npx serve .` або `python3 -m http.server 8000` — потім відкрийте `http://localhost:8000` (або вказаний порт).
 
 ## User flow
