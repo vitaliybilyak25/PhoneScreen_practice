@@ -1,0 +1,238 @@
+/* Reset and base */
+*, *::before, *::after { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1a2e;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Phone frame — mobile viewport */
+.phone-frame {
+  width: 100%;
+  max-width: 375px;
+  min-height: 667px;
+  max-height: 90vh;
+  background: #0f0f1a;
+  border-radius: 2rem;
+  box-shadow: 0 0 0 3px #2a2a4a, 0 24px 48px rgba(0,0,0,0.5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screens — only one visible */
+.screen {
+  display: none;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  color: #e8e8f0;
+}
+.screen.screen-active {
+  display: flex;
+}
+
+/* Header */
+.screen-header {
+  flex-shrink: 0;
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid #2a2a4a;
+  background: #16162a;
+}
+.screen-header--with-back {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.screen-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+.btn-back {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: #2a2a4a;
+  color: #e8e8f0;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.btn-back:hover, .btn-back:focus {
+  background: #3a3a5a;
+  outline: none;
+}
+
+/* Search */
+.search-wrap {
+  flex-shrink: 0;
+  padding: 0.75rem 1rem;
+  background: #16162a;
+}
+.search-input {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  border: 1px solid #2a2a4a;
+  border-radius: 0.5rem;
+  background: #0f0f1a;
+  color: #e8e8f0;
+  font-size: 1rem;
+}
+.search-input::placeholder {
+  color: #6a6a8a;
+}
+.search-input:focus {
+  outline: none;
+  border-color: #4a7cff;
+}
+
+/* Contact list */
+.contact-list-wrap {
+  flex: 1;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
+  border-bottom: 1px solid #2a2a4a;
+  cursor: pointer;
+  min-height: 3.5rem;
+}
+.contact-item:hover, .contact-item:focus-visible {
+  background: #1e1e3a;
+  outline: none;
+}
+.contact-avatar {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: #3a3a6a;
+  color: #c0c0e0;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.contact-info {
+  flex: 1;
+  min-width: 0;
+}
+.contact-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.contact-phone {
+  margin: 0.25rem 0 0;
+  font-size: 0.875rem;
+  color: #8a8aaa;
+}
+
+/* Profile screen */
+.profile-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.profile-avatar {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background: #3a3a6a;
+  color: #c0c0e0;
+  font-size: 1.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+.profile-name {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.profile-phone {
+  margin: 0 0 2rem;
+  font-size: 1rem;
+  color: #8a8aaa;
+}
+.btn-call {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background: #22c55e;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+.btn-call:hover, .btn-call:focus {
+  background: #16a34a;
+  outline: none;
+}
+
+/* Call screen */
+.call-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+.call-name {
+  margin: 0 0 0.25rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.call-phone {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #8a8aaa;
+}
+.call-status {
+  margin: 0 0 3rem;
+  font-size: 0.9rem;
+  color: #6a6a8a;
+}
+.btn-end-call {
+  padding: 0.875rem 2rem;
+  border: none;
+  border-radius: 2rem;
+  background: #dc2626;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 2.75rem;
+}
+.btn-end-call:hover, .btn-end-call:focus {
+  background: #b91c1c;
+  outline: none;
+}

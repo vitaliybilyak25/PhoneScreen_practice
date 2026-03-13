@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Телефонні дзвінки — прототип</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="phone-frame">
+    <!-- Екран 1: Список контактів -->
+    <section id="screen-contacts" class="screen screen-active">
+      <header class="screen-header">
+        <h1 class="screen-title">Контакти</h1>
+      </header>
+      <div class="search-wrap">
+        <input type="text" id="search-input" class="search-input" placeholder="Пошук за ім'ям або номером" autocomplete="off">
+      </div>
+      <div class="contact-list-wrap">
+        <ul id="contact-list" class="contact-list" role="list">
+          <!-- Заповнюється з app.js -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- Екран 2: Профіль контакту -->
+    <section id="screen-profile" class="screen">
+      <header class="screen-header screen-header--with-back">
+        <button type="button" id="btn-back" class="btn-back" aria-label="Назад">←</button>
+        <span class="screen-title">Профіль</span>
+      </header>
+      <div class="profile-content">
+        <div id="profile-avatar" class="profile-avatar" aria-hidden="true"></div>
+        <h2 id="profile-name" class="profile-name"></h2>
+        <p id="profile-phone" class="profile-phone"></p>
+        <button type="button" id="btn-call" class="btn-call">Подзвонити</button>
+      </div>
+    </section>
+
+    <!-- Екран 3: Екран дзвінка -->
+    <section id="screen-call" class="screen">
+      <div class="call-content">
+        <h2 id="call-name" class="call-name"></h2>
+        <p id="call-phone" class="call-phone"></p>
+        <p id="call-status" class="call-status">Дзвінок…</p>
+        <button type="button" id="btn-end-call" class="btn-end-call">Завершити дзвінок</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
